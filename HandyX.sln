@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GifX", "GifX\GifX.csproj", "{197C0C94-F08F-43E9-BF9C-289E53298F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconfontX", "IconfontX\IconfontX.csproj", "{67428E5B-48B3-4017-A447-0AE5D11DC99F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{197C0C94-F08F-43E9-BF9C-289E53298F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197C0C94-F08F-43E9-BF9C-289E53298F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197C0C94-F08F-43E9-BF9C-289E53298F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197C0C94-F08F-43E9-BF9C-289E53298F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6365E8F2-15D1-466A-8E68-519FBE0C7B91}
+	EndGlobalSection
+EndGlobal
