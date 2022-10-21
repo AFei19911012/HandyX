@@ -25,12 +25,23 @@ namespace IconfontX
                 string text = SVG_Text.Text;
                 if (text != "")
                 {
-                    string path = Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase)[1].Split('\"')[0];
+                    // 需要注意存在多条路径的情况
+                    string[] strs = Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase);
+                    int len = strs.Length;
+                    string path = "";
+                    for (int i = 1; i < strs.Length; i++)
+                    {
+                        path += Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase)[i].Split('\"')[0];
+                    }
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
 
                     // 生成图标
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
-                    Path_Icon.Data = (Geometry)converter.ConvertFrom(path);
+                    GeometryGroup geometry = new GeometryGroup();
+                    geometry.Children.Add((Geometry)converter.ConvertFrom(path));
+                    // 设置填充规则
+                    geometry.FillRule = FillRule.Nonzero;
+                    Path_Icon.Data = geometry;
                 }
             }
             catch (Exception)
