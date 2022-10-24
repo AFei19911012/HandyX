@@ -66,9 +66,9 @@ namespace IconfontX
                                 if (txt.Contains("path d=\""))
                                 {
                                     SVG_Text.Text = Clipboard.GetText();
+                                    // 清空剪切板
+                                    Clipboard.Clear();
                                 }
-                                // 清空剪切板
-                                Clipboard.Clear();
                             }
                         }
                         catch (Exception)
