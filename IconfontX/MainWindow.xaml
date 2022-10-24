@@ -25,7 +25,8 @@
             <CheckBox x:Name="CKB_Spy" Content="监控剪切板" IsChecked="True" Margin="10,5,30,5" FontSize="18"/>
 
             <hc:TextBox x:Name="TB_Name" Text="default" hc:BorderElement.CornerRadius="0" hc:InfoElement.TitlePlacement="Left" hc:InfoElement.Title="资源名称" 
-                    Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"/>
+                    Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"
+                        TextChanged="TB_Name_TextChanged"/>
         </StackPanel>
 
         <TextBlock Grid.Row="3" Text="Geometry 资源" FontSize="18" Margin="10, 5" Foreground="{DynamicResource PrimaryBrush}"/>

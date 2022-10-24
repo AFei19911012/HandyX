@@ -39,7 +39,7 @@ namespace IconfontX
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
                     GeometryGroup geometry = new GeometryGroup();
                     geometry.Children.Add((Geometry)converter.ConvertFrom(path));
-                    // 设置填充规则
+                    // 设置填充规则 很重要
                     geometry.FillRule = FillRule.Nonzero;
                     Path_Icon.Data = geometry;
                 }
@@ -58,18 +58,32 @@ namespace IconfontX
                 {
                     _ = Application.Current?.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        if (CKB_Spy.IsChecked == true && Clipboard.ContainsText())
+                        try
                         {
-                            string txt = Clipboard.GetText();
-                            if (txt.Contains("path d=\""))
+                            if (CKB_Spy.IsChecked == true && Clipboard.ContainsText())
                             {
-                                SVG_Text.Text = Clipboard.GetText();
+                                string txt = Clipboard.GetText();
+                                if (txt.Contains("path d=\""))
+                                {
+                                    SVG_Text.Text = Clipboard.GetText();
+                                }
+                                // 清空剪切板
+                                Clipboard.Clear();
                             }
+                        }
+                        catch (Exception)
+                        {
+
                         }
                     }));
                     Thread.Sleep(500);
                 }
             });
+        }
+
+        private void TB_Name_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            SVG_Text_TextChanged(null, null);
         }
     }
 }
