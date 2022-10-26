@@ -37,8 +37,8 @@ namespace IconfontX
 
                     // 生成图标
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
-                    GeometryGroup geometry = new GeometryGroup();
-                    geometry.Children.Add((Geometry)converter.ConvertFrom(path));
+                    PathGeometry geometry = new PathGeometry();
+                    geometry.AddGeometry((Geometry)converter.ConvertFrom(path));
                     // 设置填充规则 很重要
                     geometry.FillRule = FillRule.Nonzero;
                     Path_Icon.Data = geometry;

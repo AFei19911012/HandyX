@@ -1,0 +1,242 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hc="https://handyorg.github.io/handycontrol">
+
+    
+    <Color x:Key="PrimaryColor">#FF326CF3</Color>
+    <Color x:Key="DarkPrimaryColor">#FF326CF3</Color>
+
+    <Color x:Key="AccentColor">#FFF8491E</Color>
+    <Color x:Key="DarkAccentColor">#FFF8491E</Color>
+
+    <Color x:Key="DangerColor">#FFDB3340</Color>
+    <Color x:Key="DarkDangerColor">#FFDB3340</Color>
+
+    <Color x:Key="WarningColor">#FFE9AF20</Color>
+    <Color x:Key="DarkWarningColor">#FFE9AF20</Color>
+
+    <Color x:Key="InfoColor">#FF00BCD4</Color>
+    <Color x:Key="DarkInfoColor">#FF00BCD4</Color>
+
+    <Color x:Key="SuccessColor">#FF2DB84d</Color>
+    <Color x:Key="DarkSuccessColor">#FF2DB84d</Color>
+
+
+    <Color x:Key="BackgroundColor">#FFEEEEEE</Color>
+
+
+    <LinearGradientBrush x:Key="PrimaryBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkPrimaryColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkPrimaryBrush" Color="{DynamicResource DarkPrimaryColor}"/>
+
+    <LinearGradientBrush x:Key="AccentBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkAccentColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkAccentBrush" Color="{DynamicResource DarkAccentColor}"/>
+
+    <LinearGradientBrush x:Key="DangerBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource DangerColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkDangerColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkDangerBrush" Color="{DynamicResource DarkDangerColor}"/>
+
+    <LinearGradientBrush x:Key="WarningBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource WarningColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkWarningColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkWarningBrush" Color="{DynamicResource DarkWarningColor}"/>
+
+    <LinearGradientBrush x:Key="InfoBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource InfoColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkInfoColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkInfoBrush" Color="{DynamicResource DarkInfoColor}"/>
+
+    <LinearGradientBrush x:Key="SuccessBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource SuccessColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkSuccessColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkSuccessBrush" Color="{DynamicResource DarkSuccessColor}"/>
+
+    <SolidColorBrush x:Key="MagentaBrush" Color="{DynamicResource MagentaColor}"/>
+    <SolidColorBrush x:Key="DarkMagentaBrush" Color="{DynamicResource DarkMagentaColor}"/>
+
+    <SolidColorBrush x:Key="VioletBrush" Color="{DynamicResource VioletColor}"/>
+    <SolidColorBrush x:Key="DarkVioletBrush" Color="{DynamicResource DarkVioletColor}"/>
+
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
+
+    <SolidColorBrush x:Key="BorderBrush" Color="#FFE0E0E0"/>
+    <SolidColorBrush x:Key="SecondaryBorderBrush" Color="#FF212121"/>
+
+    <SolidColorBrush x:Key="RegionBrush" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="SecondaryRegionBrush" Color="#FFEEEEEE"/>
+
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#FF212121"/>
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#FF757575"/>
+
+
+
+    <SolidColorBrush x:Key="LostFocusBrush" Color="LightPink"/>
+    <SolidColorBrush x:Key="ListSelectedBrush" Color="#FF326CF3"/>
+    <SolidColorBrush x:Key="BackgroundBrushDark" Color="#FFE0E0E0"/>
+    <SolidColorBrush x:Key="BackgroundBrushLight" Color="#FFEEEEEE"/>
+
+
+    <!-- 项目需要引用 HandyControl.dll -->
+    <Style x:Key="MyDataGridStyleSmall" BasedOn="{StaticResource DataGrid.Small}" TargetType="{x:Type DataGrid}">
+        <Setter Property="CellStyle" Value="{DynamicResource MyDataGridCellSytle}" />
+        <Setter Property="RowStyle" Value="{DynamicResource MyDataGridRowSytle}" />
+        <Setter Property="ColumnHeaderStyle" Value="{DynamicResource MyDataGridColumnHeaderStyle}"/>
+        <Setter Property="RowHeaderStyle" Value="{DynamicResource MyDataGridRowHeaderStyle}"/>
+        <Setter Property="ColumnHeaderHeight" Value="28"/>
+        <Setter Property="RowHeight" Value="24"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="CanUserResizeRows" Value="False"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <!-- DataGrid 列头样式 -->
+    <Style x:Key="MyDataGridColumnHeaderStyle" BasedOn="{StaticResource DataGridColumnHeaderStyle.Small}" TargetType="DataGridColumnHeader">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Margin" Value="6,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridColumnHeader">
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- DataGrid 行头样式 -->
+    <Style x:Key="MyDataGridRowHeaderStyle" TargetType="DataGridRowHeader">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridRowHeader">
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- DataGrid 行样式 -->
+    <Style x:Key="MyDataGridRowSytle" TargetType="DataGridRow">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Style.Triggers>
+            <!-- 隔行换色 放到前面 -->
+            <Trigger Property="AlternationIndex" Value="0" >
+                <Setter Property="Background" Value="{DynamicResource BackgroundBrushDark}" />
+            </Trigger>
+            <Trigger Property="AlternationIndex" Value="1" >
+                <Setter Property="Background" Value="{DynamicResource BackgroundBrushLight}"/>
+            </Trigger>
+
+            <!-- 鼠标停留时背景色 -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+            
+            <!-- 选中时背景颜色 -->
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ListSelectedBrush}"/>
+            </Trigger>
+
+            <!-- 失去焦点时背景颜色 -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LostFocusBrush}"/>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    <!-- DataGrid 单元格样式 -->
+    <Style x:Key="MyDataGridCellSytle" TargetType="DataGridCell">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <!-- 选中时背景颜色 -->
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ListSelectedBrush}"/>
+            </Trigger>
+
+            <!-- 失去焦点时背景颜色 -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LostFocusBrush}"/>
+            </MultiTrigger>
+
+            <!-- 根据日志类型设置文字颜色 -->
+            <DataTrigger Binding="{Binding Type}" Value="Debug">
+                <Setter Property="Foreground" Value="Black"/>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Type}" Value="Info">
+                <Setter Property="Foreground" Value="{DynamicResource InfoBrush}"/>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Type}" Value="Warning">
+                <Setter Property="Foreground" Value="{DynamicResource WarningBrush}"/>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Type}" Value="Success">
+                <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}"/>
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Type}" Value="Error">
+                <Setter Property="Foreground" Value="{DynamicResource DangerBrush}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+    <!-- 项目需要引用 HandyControl.dll -->
+    <Style x:Key="MyListBoxRowSytle" BasedOn="{StaticResource ListBoxItemBaseStyle.Small}" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Style.Triggers>
+            <!-- 失去焦点时背景颜色 -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource LostFocusBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    
+    <Style x:Key="MyLoadingCircleStyle" BasedOn="{StaticResource LoadingCircleBaseStyle}" TargetType="{x:Type hc:LoadingCircle}">
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="hc:BorderElement.CornerRadius" Value="0"/>
+        <Setter Property="hc:InfoElement.TitlePlacement" Value="Left"/>
+    </Style>
+    
+
+    <Style x:Key="MyNumericUpDownStyle" BasedOn="{StaticResource NumericUpDownPlusBaseStyle}" TargetType="{x:Type hc:NumericUpDown}">
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="hc:BorderElement.CornerRadius" Value="0"/>
+        <Setter Property="hc:InfoElement.TitlePlacement" Value="Left"/>
+    </Style>
+
+
+    <Style x:Key="MyTextBlockDefaultBold" BasedOn="{StaticResource TextBlockBoldBaseStyle}" TargetType="{x:Type TextBlock}" />
+</ResourceDictionary>
