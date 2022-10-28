@@ -3,13 +3,50 @@
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-           xmlns:hc="https://handyorg.github.io/handycontrol" 
-           xmlns:controls="clr-namespace:WpfControls.Controls;assembly=WpfControls"
+           xmlns:hc="https://handyorg.github.io/handycontrol"
            mc:Ignorable="d"
            Icon="icon.ico"
-           Title="Geometry 资源图标" Height="450" Width="1200">
-    <UniformGrid Rows="10" Columns="5">
-        <controls:IconButton PathData="{DynamicResource IconAsk}" Content="IconAsk" Height="32" FontSize="18" Margin="2" HorizontalAlignment="Left"
-                             Foreground="{DynamicResource AccentBrush}" MouseOverForeground="{DynamicResource PrimaryBrush}"/>
-    </UniformGrid>
+           WindowStartupLocation="CenterScreen"
+           Title="Geometry 资源图标" Height="800" Width="1400">
+    <TabControl Margin="5">
+        <TabItem Header="Geometry 资源">
+            <ScrollViewer>
+                <WrapPanel Name="MyGeometryContainer"/>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Brush 颜色">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer>
+                    <StackPanel x:Name="MyBrushContainer1" Orientation="Vertical" Margin="10">
+                        <TextBlock Text="颜色名" HorizontalAlignment="Center" FontSize="18"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Grid.Column="1">
+                    <StackPanel x:Name="MyBrushContainer2" Orientation="Vertical" Margin="10">
+                        <TextBlock Text="中国传统色" HorizontalAlignment="Center" FontSize="18"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Grid.Column="2">
+                    <StackPanel x:Name="MyBrushContainer3" Orientation="Vertical" Margin="10">
+                        <TextBlock Text="267非发光体标准色" HorizontalAlignment="Center" FontSize="18"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Grid.Column="3">
+                    <StackPanel x:Name="MyBrushContainer4" Orientation="Vertical" Margin="10">
+                        <TextBlock Text="和色大辞典" HorizontalAlignment="Center" FontSize="18"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </hc:Window>

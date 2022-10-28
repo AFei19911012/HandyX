@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="PrimaryColor">#FF326CF3</Color>
+    <Color x:Key="DarkPrimaryColor">#FF326CF3</Color>
+
+    <Color x:Key="AccentColor">#FFF8491E</Color>
+    <Color x:Key="DarkAccentColor">#FFF8491E</Color>
+
+    <Color x:Key="DangerColor">#FFDB3340</Color>
+    <Color x:Key="DarkDangerColor">#FFDB3340</Color>
+
+    <Color x:Key="ErrorColor">#FFDB3340</Color>
+    <Color x:Key="DarkErrorColor">#FFDB3340</Color>
+
+    <Color x:Key="WarningColor">#FFE9AF20</Color>
+    <Color x:Key="DarkWarningColor">#FFE9AF20</Color>
+
+    <Color x:Key="InfoColor">#FF00BCD4</Color>
+    <Color x:Key="DarkInfoColor">#FF00BCD4</Color>
+
+    <Color x:Key="SuccessColor">#FF2DB84d</Color>
+    <Color x:Key="DarkSuccessColor">#FF2DB84d</Color>
+
+    <LinearGradientBrush x:Key="PrimaryBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkPrimaryColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkPrimaryBrush" Color="{DynamicResource DarkPrimaryColor}"/>
+
+    <LinearGradientBrush x:Key="AccentBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource AccentColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkAccentColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkAccentBrush" Color="{DynamicResource DarkAccentColor}"/>
+
+    <LinearGradientBrush x:Key="DangerBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource DangerColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkDangerColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkDangerBrush" Color="{DynamicResource DarkDangerColor}"/>
+
+    <LinearGradientBrush x:Key="ErrorBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource ErrorColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkErrorColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkErrorBrush" Color="{DynamicResource DarkErrorColor}"/>
+
+    <LinearGradientBrush x:Key="WarningBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource WarningColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkWarningColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkWarningBrush" Color="{DynamicResource DarkWarningColor}"/>
+
+    <LinearGradientBrush x:Key="InfoBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource InfoColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkInfoColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkInfoBrush" Color="{DynamicResource DarkInfoColor}"/>
+
+    <LinearGradientBrush x:Key="SuccessBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource SuccessColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkSuccessColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkSuccessBrush" Color="{DynamicResource DarkSuccessColor}"/>
+</ResourceDictionary>

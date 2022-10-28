@@ -11,14 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryX", "GeometryX\GeometryX.csproj", "{32B3C894-69AB-4CA2-B87B-EC99D1774C7D}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedResources", "SharedResources\SharedResources.shproj", "{018EA036-2538-4F27-8BF8-8F72E233E4D4}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		SharedResources\SharedResources.projitems*{018ea036-2538-4f27-8bf8-8f72e233e4d4}*SharedItemsImports = 13
-		SharedResources\SharedResources.projitems*{32b3c894-69ab-4ca2-b87b-ec99d1774c7d}*SharedItemsImports = 4
-		SharedResources\SharedResources.projitems*{923af1f3-d69e-4cab-ac76-3652c9e1f91e}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

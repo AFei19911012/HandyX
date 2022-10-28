@@ -13,6 +13,9 @@
     <Color x:Key="DangerColor">#FFDB3340</Color>
     <Color x:Key="DarkDangerColor">#FFDB3340</Color>
 
+    <Color x:Key="ErrorColor">#FFDB3340</Color>
+    <Color x:Key="DarkErrorColor">#FFDB3340</Color>
+
     <Color x:Key="WarningColor">#FFE9AF20</Color>
     <Color x:Key="DarkWarningColor">#FFE9AF20</Color>
 
@@ -43,6 +46,12 @@
         <GradientStop Color="{DynamicResource DarkDangerColor}" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="DarkDangerBrush" Color="{DynamicResource DarkDangerColor}"/>
+
+    <LinearGradientBrush x:Key="ErrorBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource ErrorColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkErrorColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkErrorBrush" Color="{DynamicResource DarkErrorColor}"/>
 
     <LinearGradientBrush x:Key="WarningBrush" EndPoint="1,0" StartPoint="0,0">
         <GradientStop Color="{DynamicResource WarningColor}" Offset="0"/>
