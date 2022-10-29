@@ -50,9 +50,9 @@ namespace GeometryX
                     Content = names[i],
                     Height = 32,
                     FontSize = 18,
-                    Margin = new Thickness(1),
+                    Margin = new Thickness(5),
                     HorizontalAlignment = HorizontalAlignment.Left,
-                    Width = 200,
+                    Width = 220,
                     Foreground = (Brush)FindResource("AccentBrush"),
                     MouseOverForeground = (Brush)FindResource("PrimaryBrush"),
                 };
