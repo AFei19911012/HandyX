@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace IconfontX
 {
@@ -29,19 +31,26 @@ namespace IconfontX
                     string[] strs = Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase);
                     int len = strs.Length;
                     string path = "";
+                    List<string> paths = new List<string>();
                     for (int i = 1; i < strs.Length; i++)
                     {
-                        path += Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase)[i].Split('\"')[0];
+                        paths.Add(strs[i].Split('\"')[0]);
+                        path += " " + strs[i].Split('\"')[0];
                     }
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
 
-                    // 生成图标
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
+                    //Path_Icon.Data = (Geometry)converter.ConvertFrom(path);
+
+                    // 处理一些特殊情况
                     PathGeometry geometry = new PathGeometry();
                     geometry.AddGeometry((Geometry)converter.ConvertFrom(path));
                     // 设置填充规则 很重要
                     geometry.FillRule = FillRule.Nonzero;
                     Path_Icon.Data = geometry;
+
+                    // 处理一些特殊情况
+                    //Path_Icon.Data = GeometryMethod.ConvertGeometryFill(geometry);
                 }
             }
             catch (Exception)

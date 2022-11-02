@@ -56,6 +56,7 @@
       <DependentUpon>IconButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converter\GeometryConverter.cs" />
+    <Compile Include="Converter\GeometryFillConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
