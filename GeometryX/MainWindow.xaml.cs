@@ -22,6 +22,8 @@ namespace GeometryX
             InitTraditionalBrush();
 
             InitNBS();
+
+            InitJapaneseBrush();
         }
 
 
@@ -868,6 +870,12 @@ namespace GeometryX
                 info.BrushStr.Text = colors[i].ToString();
                 _ = MyBrushContainer3.Children.Add(info);
             }
+        }
+
+
+        private void InitJapaneseBrush()
+        {
+
         }
     }
 }

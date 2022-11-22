@@ -14,6 +14,6 @@
         <TextBox Grid.Column="0" Name="BrushStr" Text="#FFFFFFFF" hc:BorderElement.CornerRadius="0" 
                  BorderThickness="0" IsReadOnly="True" AutoWordSelection="True"/>
         <TextBlock Grid.Column="1" x:Name="BrushShow" Background="LightGoldenrodYellow" Margin="1"/>
-        <TextBlock Grid.Column="2" x:Name="BrushName" Text="LightGoldenrodYellow" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="2" x:Name="BrushName" Text="LightGoldenrodYellow" VerticalAlignment="Center" Margin="3,0"/>
     </Grid>
 </UserControl>

@@ -25,8 +25,12 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <CheckBox x:Name="CKB_Spy" Content="监控剪切板" IsChecked="True" Margin="10,5,30,5" FontSize="18"/>
 
+            <RadioButton x:Name="RaBtn_Geometry" Content="Geometry" IsChecked="True" Margin="5" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="RaBtn_PathGeometry" Content="PathGeometry" Margin="5" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="RaBtn_CombinedGeometry" Content="CombinedGeometry" Margin="0,5,30,5" Checked="RadioButton_Checked"/>
+
             <hc:TextBox x:Name="TB_Name" Text="default" hc:BorderElement.CornerRadius="0" hc:InfoElement.TitlePlacement="Left" hc:InfoElement.Title="资源名称" 
-                    Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"
+                        Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"
                         TextChanged="TB_Name_TextChanged"/>
         </StackPanel>
 

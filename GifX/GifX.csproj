@@ -50,8 +50,9 @@
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\..\WPFs\Dlls\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="HandyControl">
-      <HintPath>..\..\WPFs\Dlls\HandyControl.dll</HintPath>
+    <Reference Include="HandyControl, Version=3.3.0.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dlls\HandyControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

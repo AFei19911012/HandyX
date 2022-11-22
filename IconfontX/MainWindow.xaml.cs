@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace IconfontX
 {
@@ -40,17 +39,21 @@ namespace IconfontX
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
 
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
-                    //Path_Icon.Data = (Geometry)converter.ConvertFrom(path);
-
-                    // 处理一些特殊情况
-                    PathGeometry geometry = new PathGeometry();
-                    geometry.AddGeometry((Geometry)converter.ConvertFrom(path));
-                    // 设置填充规则 很重要
-                    geometry.FillRule = FillRule.Nonzero;
-                    Path_Icon.Data = geometry;
-
-                    // 处理一些特殊情况
-                    //Path_Icon.Data = GeometryMethod.ConvertGeometryFill(geometry);
+                    Geometry geometry = (Geometry)converter.ConvertFrom(path);
+                    if (RaBtn_Geometry.IsChecked == true)
+                    {
+                        Path_Icon.Data = geometry;
+                    }
+                    else if (RaBtn_PathGeometry.IsChecked == true)
+                    {
+                        // 处理一些特殊情况
+                        Path_Icon.Data = GeometryMethod.ConvertGeometry(geometry);
+                    }
+                    else
+                    {
+                        // 处理一些特殊情况
+                        Path_Icon.Data = GeometryMethod.ConvertGeometryFill(geometry);
+                    }
                 }
             }
             catch (Exception)
@@ -91,6 +94,11 @@ namespace IconfontX
         }
 
         private void TB_Name_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            SVG_Text_TextChanged(null, null);
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             SVG_Text_TextChanged(null, null);
         }
