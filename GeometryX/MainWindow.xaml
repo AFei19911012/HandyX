@@ -4,10 +4,15 @@
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            xmlns:hc="https://handyorg.github.io/handycontrol"
+           xmlns:vm="clr-namespace:GeometryX.ViewModel"
            mc:Ignorable="d"
            Icon="icon.ico"
            WindowStartupLocation="CenterScreen"
            Title="Geometry 资源图标" Height="800" Width="1400">
+    <hc:Window.DataContext>
+        <vm:MainWindowVM/>
+    </hc:Window.DataContext>
+    
     <TabControl Margin="5">
         <TabItem Header="Geometry 资源">
             <ScrollViewer>
@@ -16,37 +21,87 @@
         </TabItem>
 
         <TabItem Header="Brush 颜色">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <ScrollViewer>
-                    <StackPanel x:Name="MyBrushContainer1" Orientation="Vertical" Margin="10">
-                        <TextBlock Text="颜色名" HorizontalAlignment="Center" FontSize="18"/>
-                    </StackPanel>
-                </ScrollViewer>
+            <UniformGrid Columns="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="标准色卡(138)" HorizontalAlignment="Center" FontSize="18"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding ListColors}" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding BrushStr}" hc:BorderElement.CornerRadius="0" Width="80"
+                                             BorderThickness="0" IsReadOnly="True" AutoWordSelection="True"/>
+                                    <TextBlock Background="{Binding BrushShow}" Margin="1" Width="80"/>
+                                    <TextBlock Text="{Binding BrushName}" VerticalAlignment="Center" Margin="3,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
 
-                <ScrollViewer Grid.Column="1">
-                    <StackPanel x:Name="MyBrushContainer2" Orientation="Vertical" Margin="10">
-                        <TextBlock Text="中国传统色" HorizontalAlignment="Center" FontSize="18"/>
-                    </StackPanel>
-                </ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="中国传统色(524)" HorizontalAlignment="Center" FontSize="18"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding ListTraditionalColors}" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding BrushStr}" hc:BorderElement.CornerRadius="0" Width="80" 
+                                             BorderThickness="0" IsReadOnly="True" AutoWordSelection="True"/>
+                                    <TextBlock Background="{Binding BrushShow}" Margin="1" Width="80"/>
+                                    <TextBlock Text="{Binding BrushName}" VerticalAlignment="Center" Margin="3,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
 
-                <ScrollViewer Grid.Column="2">
-                    <StackPanel x:Name="MyBrushContainer3" Orientation="Vertical" Margin="10">
-                        <TextBlock Text="267非发光体标准色" HorizontalAlignment="Center" FontSize="18"/>
-                    </StackPanel>
-                </ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="非发光体标准色(267)" HorizontalAlignment="Center" FontSize="18"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding ListNBSColors}" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding BrushStr}" hc:BorderElement.CornerRadius="0" Width="80"
+                                             BorderThickness="0" IsReadOnly="True" AutoWordSelection="True"/>
+                                    <TextBlock Background="{Binding BrushShow}" Margin="1" Width="80"/>
+                                    <TextBlock Text="{Binding BrushName}" VerticalAlignment="Center" Margin="3,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
 
-                <ScrollViewer Grid.Column="3">
-                    <StackPanel x:Name="MyBrushContainer4" Orientation="Vertical" Margin="10">
-                        <TextBlock Text="和色大辞典" HorizontalAlignment="Center" FontSize="18"/>
-                    </StackPanel>
-                </ScrollViewer>
-            </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="和色大辞典(465)" HorizontalAlignment="Center" FontSize="18"/>
+                    <ListBox Grid.Row="1" ItemsSource="{Binding ListJapaneseColors}" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding BrushStr}" hc:BorderElement.CornerRadius="0" Width="80" 
+                                             BorderThickness="0" IsReadOnly="True" AutoWordSelection="True"/>
+                                    <TextBlock Background="{Binding BrushShow}" Margin="1" Width="80"/>
+                                    <TextBlock Text="{Binding BrushName}" VerticalAlignment="Center" Margin="3,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </UniformGrid>
         </TabItem>
     </TabControl>
 </hc:Window>
