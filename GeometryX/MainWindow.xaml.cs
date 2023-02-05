@@ -60,5 +60,60 @@ namespace GeometryX
                 _ = MyGeometryContainer.Children.Add(button);
             }
         }
+
+        /// <summary>
+        /// 设置窗体尺寸
+        /// </summary>
+        private void SetWindowSize()
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal;
+                MyResizeIcon.Data = (Geometry)FindResource("IconWindowMax");
+                MyButtonResize.ToolTip = "最大化";
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+                MyResizeIcon.Data = (Geometry)FindResource("IconWindowRestore");
+                MyButtonResize.ToolTip = "向下还原";
+            }
+        }
+
+        private void ButtonMin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void ButtonResize_Click(object sender, RoutedEventArgs e)
+        {
+            SetWindowSize();
+        }
+
+        private void Move_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                DragMove();
+
+                // 拖动后窗体变成默认的
+                WindowState = WindowState.Normal;
+                MyResizeIcon.Data = (Geometry)FindResource("IconWindowMax");
+                MyButtonResize.ToolTip = "最大化";
+            }
+        }
+
+        private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == System.Windows.Input.MouseButton.Left && e.ClickCount == 2)
+            {
+                SetWindowSize();
+            }
+        }
     }
 }

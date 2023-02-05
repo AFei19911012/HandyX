@@ -22,6 +22,14 @@
     <Color x:Key="SuccessColor">#FF2DB84d</Color>
     <Color x:Key="DarkSuccessColor">#FF2DB84d</Color>
 
+    <Color x:Key="MouseEnterColor">#FFDCDCDC</Color>
+    <Color x:Key="DarkMouseEnterColor">#FFDCDCDC</Color>
+
+    <Color x:Key="MousePressedColor">#FFD3D3D3</Color>
+    <Color x:Key="DarkMousePressedColor">#FFD3D3D3</Color>
+
+    <Color x:Key="WindowClosedMouseEnterColor">#FFF07C82</Color>
+
     <LinearGradientBrush x:Key="PrimaryBrush" EndPoint="1,0" StartPoint="0,0">
         <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0"/>
         <GradientStop Color="{DynamicResource DarkPrimaryColor}" Offset="1"/>
@@ -63,4 +71,16 @@
         <GradientStop Color="{DynamicResource DarkSuccessColor}" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="DarkSuccessBrush" Color="{DynamicResource DarkSuccessColor}"/>
+
+    <LinearGradientBrush x:Key="MouseEnterBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource MouseEnterColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkMouseEnterColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkMouseEnterBrush" Color="{DynamicResource DarkMouseEnterColor}"/>
+
+    <LinearGradientBrush x:Key="MousePressedBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="{DynamicResource MousePressedColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource DarkMousePressedColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DarkMousePressedBrush" Color="{DynamicResource DarkMousePressedColor}"/>
 </ResourceDictionary>
