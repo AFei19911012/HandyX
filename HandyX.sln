@@ -7,11 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GifX", "GifX\GifX.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconfontX", "IconfontX\IconfontX.csproj", "{67428E5B-48B3-4017-A447-0AE5D11DC99F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\WpfControls.csproj", "{923AF1F3-D69E-4CAB-AC76-3652C9E1F91E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryX", "GeometryX\GeometryX.csproj", "{32B3C894-69AB-4CA2-B87B-EC99D1774C7D}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GalaSoft.MvvmLight", "..\GalaSoft.MvvmLight\GalaSoft.MvvmLight.shproj", "{E0D724F3-A34B-4ADF-A582-139C4E4AB3CA}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\GalaSoft.MvvmLight\GalaSoft.MvvmLight.projitems*{197c0c94-f08f-43e9-bf9c-289e53298f09}*SharedItemsImports = 4
+		..\GalaSoft.MvvmLight\GalaSoft.MvvmLight.projitems*{32b3c894-69ab-4ca2-b87b-ec99d1774c7d}*SharedItemsImports = 4
+		..\GalaSoft.MvvmLight\GalaSoft.MvvmLight.projitems*{e0d724f3-a34b-4adf-a582-139c4e4ab3ca}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,10 +30,6 @@ Global
 		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67428E5B-48B3-4017-A447-0AE5D11DC99F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{923AF1F3-D69E-4CAB-AC76-3652C9E1F91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{923AF1F3-D69E-4CAB-AC76-3652C9E1F91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{923AF1F3-D69E-4CAB-AC76-3652C9E1F91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{923AF1F3-D69E-4CAB-AC76-3652C9E1F91E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32B3C894-69AB-4CA2-B87B-EC99D1774C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32B3C894-69AB-4CA2-B87B-EC99D1774C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B3C894-69AB-4CA2-B87B-EC99D1774C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU

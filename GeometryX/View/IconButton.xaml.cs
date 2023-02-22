@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace WpfControls.Controls
+namespace GeometryX.View
 {
     /// <summary>
     /// IconButton.xaml 的交互逻辑

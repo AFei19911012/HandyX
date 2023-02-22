@@ -38,18 +38,6 @@
     <ApplicationIcon>Image\Camera.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommonServiceLocator">
-      <HintPath>..\..\WPFs\Dlls\CommonServiceLocator.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight">
-      <HintPath>..\..\WPFs\Dlls\GalaSoft.MvvmLight.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras">
-      <HintPath>..\..\WPFs\Dlls\GalaSoft.MvvmLight.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Platform">
-      <HintPath>..\..\WPFs\Dlls\GalaSoft.MvvmLight.Platform.dll</HintPath>
-    </Reference>
     <Reference Include="HandyControl, Version=3.3.0.0, Culture=neutral, PublicKeyToken=45be8712787a1e5b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Dlls\HandyControl.dll</HintPath>
@@ -58,9 +46,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity">
-      <HintPath>..\..\WPFs\Dlls\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -151,5 +136,6 @@
   <ItemGroup>
     <Resource Include="Image\Camera.ico" />
   </ItemGroup>
+  <Import Project="..\..\GalaSoft.MvvmLight\GalaSoft.MvvmLight.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

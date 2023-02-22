@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GeometryX.View;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using WpfControls.Controls;
 
 namespace GeometryX
 {
@@ -114,6 +114,12 @@ namespace GeometryX
             {
                 SetWindowSize();
             }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            MaxWidth = SystemParameters.MaximumWindowTrackWidth;
+            MaxHeight = SystemParameters.MaximumWindowTrackHeight;
         }
     }
 }

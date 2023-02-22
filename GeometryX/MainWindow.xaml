@@ -12,7 +12,8 @@
            Topmost="{Binding ElementName=MyTopMost,Path=IsChecked}"
            MaxWidth="{StaticResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}"
            MaxHeight="{StaticResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}"
-           Title="Geometry 资源图标" Height="800" Width="1400">
+           Title="Geometry 资源图标" Height="800" Width="1400"
+           SizeChanged="Window_SizeChanged">
     
     <!--<hc:Window.Style>
         <Style TargetType="hc:Window">

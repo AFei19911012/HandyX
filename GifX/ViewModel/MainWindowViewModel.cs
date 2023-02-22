@@ -1,8 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Command;
 using GifX.GIFmaker;
 using GifX.Helper;
-using HandyControl.Interactivity;
 using Microsoft.Win32;
 using System;
 using System.IO;
