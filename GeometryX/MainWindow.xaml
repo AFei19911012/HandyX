@@ -170,6 +170,10 @@
                     </Grid>
                 </UniformGrid>
             </TabItem>
+
+            <TabItem Header="Test">
+                <CheckBox IsChecked="{Binding BoolIsChecked}" Content="绑定测试" VerticalContentAlignment="Center" FontSize="18" Margin="10" VerticalAlignment="Top"/>
+            </TabItem>
         </TabControl>
     </Grid>
 </hc:Window>

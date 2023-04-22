@@ -47,6 +47,14 @@ namespace GeometryX.ViewModel
         }
 
 
+        private bool _BoolIsChecked = true;
+        public bool BoolIsChecked
+        {
+            get => _BoolIsChecked;
+            set => Set(ref _BoolIsChecked, value);
+        }
+
+
         public MainWindowVM()
         {
             InitBrushName();

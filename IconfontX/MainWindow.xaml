@@ -8,12 +8,11 @@
            mc:Ignorable="d"
            Icon="icon.ico"
            Loaded="Window_Loaded"
-           Title="MainWindow" Height="600" Width="900">
+           Title="IconfontSvg" Height="600" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -27,22 +26,36 @@
 
             <RadioButton x:Name="RaBtn_Geometry" Content="Geometry" IsChecked="True" Margin="5" Checked="RadioButton_Checked"/>
             <RadioButton x:Name="RaBtn_PathGeometry" Content="PathGeometry" Margin="5" Checked="RadioButton_Checked"/>
-            <RadioButton x:Name="RaBtn_CombinedGeometry" Content="CombinedGeometry" Margin="0,5,30,5" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="RaBtn_CombinedGeometry" Content="CombinedGeometry" Margin="5" Checked="RadioButton_Checked"/>
+            <RadioButton x:Name="RaBtn_DrawingImage" Content="DrawingImage" Margin="0,5,30,5" Checked="RadioButton_Checked"/>
 
             <hc:TextBox x:Name="TB_Name" Text="default" hc:BorderElement.CornerRadius="0" hc:InfoElement.TitlePlacement="Left" hc:InfoElement.Title="资源名称" 
                         Style="{StaticResource TextBoxExtend}" BorderThickness="0" Foreground="{DynamicResource PrimaryBrush}" Margin="3" FontSize="18" Width="300"
                         TextChanged="TB_Name_TextChanged"/>
         </StackPanel>
 
-        <TextBlock Grid.Row="3" Text="Geometry 资源" FontSize="18" Margin="10, 5" Foreground="{DynamicResource PrimaryBrush}"/>
+        <TabControl Grid.Row="3" Name="MyTabControl">
+            <TabItem Header="Geometry 资源" FontSize="18">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <avalonEdit:TextEditor Name="Geometry_Text" FontFamily="Consolas" SyntaxHighlighting="XML" FontSize="10" Margin="5" ShowLineNumbers="True" WordWrap="True"/>
+                    <Path Grid.Column="1" x:Name="Path_Icon" Margin="5" Fill="{DynamicResource PrimaryBrush}" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
 
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <avalonEdit:TextEditor Name="Geometry_Text" FontFamily="Consolas" SyntaxHighlighting="XML" FontSize="10" Margin="5" ShowLineNumbers="True" WordWrap="True"/>
-            <Path Grid.Column="1" x:Name="Path_Icon" Margin="5" Fill="{DynamicResource PrimaryBrush}" Stretch="Uniform"/>
-        </Grid>
+            <TabItem Header="DrawingImage 资源" FontSize="18">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <avalonEdit:TextEditor Name="DrawingImage_Text" FontFamily="Consolas" SyntaxHighlighting="XML" FontSize="10" Margin="5" ShowLineNumbers="True" WordWrap="True"/>
+                    <Image Grid.Column="1" x:Name="Image_DrawingImage" Margin="5" Stretch="Uniform"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </hc:Window>

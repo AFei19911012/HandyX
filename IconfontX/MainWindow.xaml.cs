@@ -38,6 +38,14 @@ namespace IconfontX
                     }
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
 
+                    // 提取 fill 属性
+                    List<string> colors = new List<string>();
+                    strs = Regex.Split(text, "fill=\"#", RegexOptions.IgnoreCase);
+                    for (int i = 1; i < strs.Length; i++)
+                    {
+                        colors.Add("#FF" + strs[i].Substring(0, 6));
+                    }
+
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
                     Geometry geometry = (Geometry)converter.ConvertFrom(path);
                     if (RaBtn_Geometry.IsChecked == true)
@@ -49,16 +57,44 @@ namespace IconfontX
                         // 处理一些特殊情况
                         Path_Icon.Data = GeometryMethod.ConvertGeometry(geometry);
                     }
-                    else
+                    else if (RaBtn_CombinedGeometry.IsChecked == true)
                     {
                         // 处理一些特殊情况
                         Path_Icon.Data = GeometryMethod.ConvertGeometryFill(geometry);
+                    }
+                    else
+                    {
+                        // 处理彩色图像
+                        DrawingImage_Text.Text = string.Format("<DrawingImage x:Key=\"{0}\">\n  <DrawingImage.Drawing>\n    <DrawingGroup>", TB_Name.Text);
+                        // 给每条 Path 设置颜色
+                        for (int i = 0; i < colors.Count; i++)
+                        {
+                            string str = string.Format("\n      <GeometryDrawing Brush=\"{0}\" Geometry=\"{1}\"/>", colors[i], paths[i]);
+                            DrawingImage_Text.Text += str;
+                        }
+                        DrawingImage_Text.Text += "\n    </DrawingGroup>\n  </DrawingImage.Drawing>\n</DrawingImage>";
+
+                        // DrawingImage
+                        DrawingImage image = new DrawingImage();
+                        DrawingGroup group = new DrawingGroup();
+                        for (int i = 0; i < colors.Count; i++)
+                        {
+                            GeometryDrawing drawing = new GeometryDrawing
+                            {
+                                Brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colors[i])),
+                                Geometry = (Geometry)converter.ConvertFrom(paths[i]),
+                            };
+                            group.Children.Add(drawing);
+                        }
+                        image.Drawing = group;
+                        Image_DrawingImage.Source = image;
                     }
                 }
             }
             catch (Exception)
             {
                 Geometry_Text.Text = "";
+                DrawingImage_Text.Text = "";
             }
         }
 
@@ -100,6 +136,18 @@ namespace IconfontX
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
+            if (RaBtn_DrawingImage == null)
+            {
+                return;
+            }
+            if (RaBtn_DrawingImage.IsChecked == true)
+            {
+                MyTabControl.SelectedIndex = 1;
+            }
+            else
+            {
+                MyTabControl.SelectedIndex = 0;
+            }
             SVG_Text_TextChanged(null, null);
         }
     }
