@@ -65,7 +65,7 @@ namespace IconfontX
                     else
                     {
                         // 处理彩色图像
-                        DrawingImage_Text.Text = string.Format("<DrawingImage x:Key=\"{0}\">\n  <DrawingImage.Drawing>\n    <DrawingGroup>", TB_Name.Text);
+                        DrawingImage_Text.Text = string.Format("<DrawingImage o:Freeze=\"True\" x:Key=\"{0}\">\n  <DrawingImage.Drawing>\n    <DrawingGroup>", TB_Name.Text);
                         // 给每条 Path 设置颜色
                         for (int i = 0; i < colors.Count; i++)
                         {
