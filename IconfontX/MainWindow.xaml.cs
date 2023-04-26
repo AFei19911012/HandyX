@@ -30,21 +30,28 @@ namespace IconfontX
                     string[] strs = Regex.Split(text, "path d=\"", RegexOptions.IgnoreCase);
                     int len = strs.Length;
                     string path = "";
+                    // 提取 path 属性
                     List<string> paths = new List<string>();
+                    // 提取 fill 属性
+                    List<string> colors = new List<string>();
                     for (int i = 1; i < strs.Length; i++)
                     {
                         paths.Add(strs[i].Split('\"')[0]);
                         path += " " + strs[i].Split('\"')[0];
+
+                        // 可能没有 fill 属性
+                        if (strs[i].Contains("fill="))
+                        {
+                            string s = "fill=\"#";
+                            int pos = strs[i].IndexOf(s);
+                            colors.Add("#FF" + strs[i].Substring(pos + s.Length, 6));
+                        }
+                        else
+                        {
+                            colors.Add("#FF555555");
+                        }
                     }
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
-
-                    // 提取 fill 属性
-                    List<string> colors = new List<string>();
-                    strs = Regex.Split(text, "fill=\"#", RegexOptions.IgnoreCase);
-                    for (int i = 1; i < strs.Length; i++)
-                    {
-                        colors.Add("#FF" + strs[i].Substring(0, 6));
-                    }
 
                     TypeConverter converter = TypeDescriptor.GetConverter(typeof(Geometry));
                     Geometry geometry = (Geometry)converter.ConvertFrom(path);
