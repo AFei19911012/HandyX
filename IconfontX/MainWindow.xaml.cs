@@ -39,17 +39,26 @@ namespace IconfontX
                         paths.Add(strs[i].Split('\"')[0]);
                         path += " " + strs[i].Split('\"')[0];
 
-                        // 可能没有 fill 属性
-                        if (strs[i].Contains("fill="))
+                        // 考虑 opacity
+                        string s = "opacity=\"";
+                        double opacity = 1;
+                        if (strs[i].Contains(s))
                         {
-                            string s = "fill=\"#";
                             int pos = strs[i].IndexOf(s);
-                            colors.Add("#FF" + strs[i].Substring(pos + s.Length, 6));
+                            opacity = double.Parse(strs[i].Substring(pos + s.Length, 2));
                         }
-                        else
+                        string op = ((int)(opacity * 255)).ToString("X");
+
+                        // 考虑 fill
+                        s = "fill=\"#";
+                        string cl = "555555";
+                        if (strs[i].Contains(s))
                         {
-                            colors.Add("#FF555555");
+                            int pos = strs[i].IndexOf(s);
+                            cl = strs[i].Substring(pos + s.Length, 6);
                         }
+
+                        colors.Add("#" + op + cl);
                     }
                     Geometry_Text.Text = string.Format("<Geometry o:Freeze=\"True\" x:Key=\"{0}\">{1}</Geometry>", TB_Name.Text, path);
 
